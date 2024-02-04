@@ -3,7 +3,7 @@ exports.createDepartment = (req, res) => {
 };
 
 exports.getDepartment = (req, res) => {
-  res.send("read");
+  return res.send("read");
 };
 
 exports.getAllDepartment = (req, res) => {

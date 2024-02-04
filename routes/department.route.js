@@ -1,9 +1,14 @@
+const express = require("express");
+const router = express.Router();
+
 const departmentController = require("../controller/department");
 
-module.exports = function departmentRoutes(app) {
-  app.post("/api/departments", departmentController.createDepartment);
-  app.get("/api/departments/:id", departmentController.getDepartment);
-  app.get("/api/departments", departmentController.getAllDepartment);
-  app.put("/api/departments/:id", departmentController.updateDepartment);
-  app.delete("/api/departments/:id", departmentController.deleteDepartment);
+module.exports = function departmentRoutes() {
+  router.post("/create", departmentController.createDepartment);
+  router.get("/:id", departmentController.getDepartment);
+  router.get("", departmentController.getAllDepartment);
+  router.put("/:id", departmentController.updateDepartment);
+  router.delete("/:id", departmentController.deleteDepartment);
+
+  return router;
 };
