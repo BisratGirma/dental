@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 
-const connection = mongoose.connect("mongodb://localhost/employee-management");
+const connection = mongoose.connect(
+  "mongodb://mongo:27017/employee-management"
+);
 
 connection
   .then(() => {
